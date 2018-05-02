@@ -20,7 +20,7 @@ app.factory('DataService', function() { // the service (3)
 
 	dataService.addData = function(d) {
 		data.push({reg: d.reg, lat: d.lat, lon:d.lon});
-		localStorage.setItem('data', JSON.stringify(data));
+		localStorage.setItem('data', JSON.stringify(data)); // using local storage, use database going forward
 	}
 
 	dataService.getData = function() {
