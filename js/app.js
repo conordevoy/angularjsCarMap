@@ -31,16 +31,16 @@ app.factory('DataService', function() {
 	return dataService;
 });
 
-app.controller('form-input', function($scope, DataService) { // $rootScope
+app.controller('form-input', function($scope, DataService) {
 
 	$scope.submitForm = function() {
 		let data = {reg: $scope.reg, lat: $scope.lat, lon: $scope.lon};
 		$scope.updateData(data);
-		$scope.data = DataService.getData();
 	};
 
 	$scope.updateData = function(data) {
 		DataService.changeData(data)
+		$scope.data = DataService.getData();
 	};
 });
 
